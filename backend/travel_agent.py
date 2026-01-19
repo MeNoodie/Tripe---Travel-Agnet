@@ -41,8 +41,14 @@ def search_destination(query) :
         
     return search.run(refined_query)
 
+@tool
+def weather_tool(query):
+    """Get current weather info."""
+    return search.run(f"current weather in {query}")
+
 known_actions = {
-    "search_destination": search_destination
+    "search_destination": search_destination,
+    "weather_tool": weather_tool
 }
 
 # Query
